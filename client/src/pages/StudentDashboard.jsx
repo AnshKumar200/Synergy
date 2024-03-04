@@ -18,16 +18,13 @@ const StudentDashboard = () => {
 		e.preventDefault();
 
 		try {
-			// Make an HTTP POST request to your local backend API endpoint
 			const response = await axios.post(
 				"http://localhost:3001/api/submit-form",
 				formData
 			);
 
-			// Handle the response as needed
 			console.log("Backend response:", response.data);
 
-			// Optional: You can reset the form after a successful submission
 			setFormData({
 				registrationNumber: "",
 				batch: "",
@@ -35,7 +32,6 @@ const StudentDashboard = () => {
 				domainWorked: "",
 			});
 		} catch (error) {
-			// Handle errors if the request fails
 			console.error("Error submitting form:", error);
 		}
 	};
