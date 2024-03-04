@@ -14,7 +14,9 @@ const Home = () => {
 				<h1 className="font-['Poppins'] text-4xl mb-4">
 					Placement Tracking VIT Bhopal
 				</h1>
-				<h2 className="font-['Poppins'] text-2xl mb-4">Subbbbb</h2>
+				<h2 className="font-['Poppins'] text-2xl mb-4">
+					Made By Team Synergy
+				</h2>
 				<div className="flex justify-center">
 					<Link to="/staff_dashboard">
 						<button className="bg-blue-500 text-white px-4 py-2 mr-4 rounded">
