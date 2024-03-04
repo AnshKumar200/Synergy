@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const StudentDashboard = () => {
 	const [formData, setFormData] = useState({
@@ -8,6 +10,11 @@ const StudentDashboard = () => {
 		languages: "",
 		domainWorked: "",
 	});
+	const showToastMessage = () => {
+		toast.success("Success Notification !", {
+			position: toast.POSITION.TOP_RIGHT,
+		});
+	};
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -94,6 +101,11 @@ const StudentDashboard = () => {
 				>
 					Submit
 				</button>
+				<Link to={`/edit-form/${formData.registrationNumber}`}>
+					<button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">
+						Edit
+					</button>
+				</Link>
 			</form>
 		</div>
 	);

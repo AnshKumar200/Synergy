@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const StaffDashboard = () => {
 	const [staffData, setStaffData] = useState([]);
+
+	const notify = () => toast("Selected! Email Sent");
 
 	useEffect(() => {
 		fetchStaffData();
@@ -27,16 +31,44 @@ const StaffDashboard = () => {
 				<thead>
 					<tr>
 						<th className="border border-gray-300 px-4 py-2">
-							Registration Number
+							<select className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
+								<option>Registration Number</option>
+								<option>20</option>
+								<option>21</option>
+								<option>22</option>
+								<option>23</option>
+							</select>
 						</th>
 						<th className="border border-gray-300 px-4 py-2">
-							Batch
+							<select className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
+								<option>Branch</option>
+								<option>CSE</option>
+								<option>AIML</option>
+								<option>Cyber</option>
+							</select>
 						</th>
 						<th className="border border-gray-300 px-4 py-2">
-							Languages
+							<select className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
+								<option>Languages</option>
+								<option>C++</option>
+								<option>Java</option>
+								<option>React</option>
+								<option>C#</option>
+								<option>Ruby</option>
+							</select>
 						</th>
 						<th className="border border-gray-300 px-4 py-2">
-							Domain Worked
+							<select className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600">
+								<option>Domian Worked</option>
+								<option>Web Dev</option>
+								<option>Cyber</option>
+								<option>AIML</option>
+								<option>App Dev</option>
+								<option>Data Science</option>
+							</select>
+						</th>
+						<th className="border border-gray-300 px-4 py-2">
+							Select
 						</th>
 					</tr>
 				</thead>
@@ -54,6 +86,15 @@ const StaffDashboard = () => {
 							</td>
 							<td className="border border-gray-300 px-4 py-2">
 								{staff.domainWorked}
+							</td>
+							<td className="border border-gray-300 px-4 py-2">
+								<button
+									onClick={notify}
+									className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-blue-300"
+								>
+									Select
+								</button>
+								<ToastContainer />
 							</td>
 						</tr>
 					))}
