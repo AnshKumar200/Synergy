@@ -5,21 +5,17 @@ const StaffDashboard = () => {
 	const [staffData, setStaffData] = useState([]);
 
 	useEffect(() => {
-		// Fetch staff data from the backend when the component mounts
 		fetchStaffData();
 	}, []);
 
 	const fetchStaffData = async () => {
 		try {
-			// Make an HTTP GET request to your backend API endpoint
 			const response = await axios.get(
 				"http://localhost:3001/api/get-staff-data"
 			);
 
-			// Set the fetched data in the state
 			setStaffData(response.data);
 		} catch (error) {
-			// Handle errors if the request fails
 			console.error("Error fetching staff data:", error);
 		}
 	};
