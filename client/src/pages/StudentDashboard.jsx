@@ -10,11 +10,6 @@ const StudentDashboard = () => {
 		languages: "",
 		domainWorked: "",
 	});
-	const showToastMessage = () => {
-		toast.success("Success Notification !", {
-			position: toast.POSITION.TOP_RIGHT,
-		});
-	};
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -44,9 +39,11 @@ const StudentDashboard = () => {
 	};
 
 	return (
-		<div className="container mx-auto p-4">
-			<h1 className="text-2xl font-bold mb-4">Registration Form</h1>
-			<form onSubmit={handleSubmit} className="max-w-md">
+		<div className="container mx-auto p-4 bg-white rounded-md shadow-md">
+			<h1 className="text-2xl font-bold mb-4 text-center">
+				Registration Form
+			</h1>
+			<form onSubmit={handleSubmit} className="max-w-md mx-auto">
 				<div className="mb-4">
 					<label className="block text-sm font-semibold text-gray-600">
 						Registration Number:
@@ -97,12 +94,12 @@ const StudentDashboard = () => {
 				</div>
 				<button
 					type="submit"
-					className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+					className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 mt-4"
 				>
 					Submit
 				</button>
 				<Link to={`/edit-form/${formData.registrationNumber}`}>
-					<button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">
+					<button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300 mt-2">
 						Edit
 					</button>
 				</Link>
